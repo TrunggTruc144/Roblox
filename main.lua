@@ -162,7 +162,7 @@ getgenv().GMAIL_ITEMS = {
     ["Royalty"] = {Class = "Charm", Id= "Royalty", MinAmount = 1},
     ["Overload"] = {Class = "Charm", Id= "Overload", MinAmount = 1},
 
-    ["Secret Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 100},
+    ["Secret Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 300},
     ["Fantasy Key"] = {Class = "Misc", Id= "Fantasy Key", MinAmount = 100},
     ["Void Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 200},
     ["Tech Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 400},
