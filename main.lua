@@ -119,7 +119,7 @@ getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
 
 getgenv().GMAIL_ITEMS = {	
 
-    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "45m"},
+    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "55m"},
 
     ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
     ["All Sea Dragons"] = {Class = "Card", Id = "Huge Sea Dragon Card", MinAmount = 1, AllVariants = true},
@@ -164,11 +164,11 @@ getgenv().GMAIL_ITEMS = {
     ["Royalty"] = {Class = "Charm", Id= "Royalty", MinAmount = 1},
     ["Overload"] = {Class = "Charm", Id= "Overload", MinAmount = 1},
 
-    ["Secret Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 300},
+    ["Secret Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 200},
     ["Fantasy Key"] = {Class = "Misc", Id= "Fantasy Key", MinAmount = 100},
-    ["Void Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 200},
-    ["Tech Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 400},
-    ["Crystal Key"] = {Class = "Misc", Id= "Secret Key", MinAmount = 600},
+    ["Void Key"] = {Class = "Misc", Id= "Void Key", MinAmount = 200},
+    ["Tech Key"] = {Class = "Misc", Id= "Tech Key", MinAmount = 400},
+    ["Crystal Key"] = {Class = "Misc", Id= "Crystal Key", MinAmount = 600},
     ["Fantasy Spinny Wheel Ticket"] = {Class = "Misc", Id= "Fantasy Spinny Wheel Ticket", MinAmount = 50},
     ["Magic Shard"] = {Class = "Misc", Id= "Magic Shard", MinAmount = 200},
     ["Bucket O' Magic"] = {Class = "Misc", Id= "Bucket O' Magic", MinAmount = 200},
