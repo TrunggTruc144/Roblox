@@ -13,23 +13,25 @@ task.wait(60)
 
 -----------------------
 
-spawn(function()
-    local Players = game:GetService("Players")
-    local LocalPlayer = Players.LocalPlayer
+if game.PlaceId ~= 8737899170 then
+    spawn(function()
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
 
-    local function KickIfServerHasPlayers()
-        local playerCount = #Players:GetPlayers()
+        local function KickIfServerHasPlayers()
+            local playerCount = #Players:GetPlayers()
 
-        if playerCount >= 2 then
-            LocalPlayer:Kick("Not in private server, rejoining...")
-            return true
+            if playerCount >= 2 then
+                LocalPlayer:Kick("Not in private server, rejoining...")
+                return true
+            end
+
+            return false
         end
 
-        return false
-    end
-
-    KickIfServerHasPlayers()
-end)
+        KickIfServerHasPlayers()
+    end)
+end
 
 -----------------------
 
