@@ -1,10 +1,6 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()
-	setfpscap(2)
-end)
-
-pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
 
@@ -54,11 +50,11 @@ end)
 
 getgenv().GDO_TIME_TRIAL = true
 
-getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 200
+getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
 
 getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
 
-getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1200
+getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
 
 getgenv().GENCHANTS = { "Huge Hunter", "Criticals", "Criticals", "Tap Power", "Strong Pets", "Explosive", "Lucky Eggs" }
 
