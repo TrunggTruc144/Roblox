@@ -84,8 +84,8 @@ getgenv().GCONSUME_CHARMS = true
 getgenv().GDAYCARE = true
 --------------------------
 getgenv().GHATCH_SPEED_MS = 0
-getgenv().GMAX_EGG_SLOTS = 99
-getgenv().GMAX_EQUIP_SLOTS = 99
+getgenv().GMAX_EGG_SLOTS = 89
+getgenv().GMAX_EQUIP_SLOTS = 84
 
 getgenv().GHOLD_GIFTS = false
 getgenv().GHOLD_BUNDLES = false
@@ -117,7 +117,7 @@ getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
 
 getgenv().GMAIL_ITEMS = {
 
-	["Send Diamonds"] = { Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "55m" },
+	--["Send Diamonds"] = { Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "55m" },
 
 	["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
 	["All Sea Dragons"] = { Class = "Card", Id = "Huge Sea Dragon Card", MinAmount = 1, AllVariants = true },
