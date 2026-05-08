@@ -1,12 +1,15 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+pcall(function()
+	setfpscap(2)
+end)
+
+pcall(function()
+	game:GetService("RunService"):Set3dRenderingEnabled(false)
+end)
 
 spawn(function()
-	while true do
-		setfpscap(5)
-		wait(1)
-	end
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
 end)
 
 task.wait(60)
