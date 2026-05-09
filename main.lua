@@ -23,151 +23,48 @@ task.spawn(function()
 	end
 end)
 
+-----------------------
+
+if game.PlaceId ~= 8737899170 then
+	task.spawn(function()
+		pcall(function()
+			game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+		end)
+	end)
+end
+
 task.wait(60)
 
 -----------------------
 
-task.spawn(function()
-	task.wait(300)
-
-	pcall(function()
-		for _, v in ipairs(game:GetService("CoreGui"):GetChildren()) do
-			if v.Name == "TopBarApp" and v.ClassName == "Folder" then
-				v:Destroy()
-			end
-		end
-	end)
-
-	local KEEP_GUI = {
-		GuiDefault = true,
-		GuiUpdater = true,
-	}
-
-	local function DisableScreenGuis()
-		local Players = game:GetService("Players")
-		local StarterGui = game:GetService("StarterGui")
-		local CoreGui = game:GetService("CoreGui")
-		local LocalPlayer = Players.LocalPlayer
-
-		local function DisableGui(v)
-			if v:IsA("ScreenGui") and not KEEP_GUI[v.Name] and v.Enabled == true then
-				v.Enabled = false
-			end
-		end
-
-		if LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui") then
-			for _, v in ipairs(LocalPlayer.PlayerGui:GetChildren()) do
-				DisableGui(v)
-			end
-		end
-
-		for _, v in ipairs(StarterGui:GetChildren()) do
-			DisableGui(v)
-		end
-
-		for _, v in ipairs(CoreGui:GetChildren()) do
-			DisableGui(v)
-		end
-	end
-
-	task.spawn(function()
-		while true do
-			pcall(DisableScreenGuis)
-			task.wait(1)
-		end
-	end)
-
-	local function LoadInfo(url)
-		task.spawn(function()
-			pcall(function()
-				loadstring(game:HttpGet(url))()
-			end)
-		end)
-	end
-
-	LoadInfo("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update.lua")
-	LoadInfo("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update2.lua")
-end)
+getgenv().GDO_RNG_INSTANCE = true
 
 -----------------------
 
-if game.PlaceId ~= 8737899170 then
-	spawn(function()
-		local Players = game:GetService("Players")
-		local LocalPlayer = Players.LocalPlayer
-
-		local function KickIfServerHasPlayers()
-			local playerCount = #Players:GetPlayers()
-
-			if playerCount >= 2 then
-				LocalPlayer:Kick("Not in private server, rejoining...")
-				return true
-			end
-
-			return false
-		end
-
-		KickIfServerHasPlayers()
-	end)
-end
-
------------------------
-
-getgenv().GDO_TIME_TRIAL = true
-
-getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
-
-getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
-
-getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
-
-getgenv().GENCHANTS = { "Huge Hunter", "Criticals", "Criticals", "Tap Power", "Strong Pets", "Explosive", "Lucky Eggs" }
-
------------------------
-getgenv().GLOOTBOXES = { "Locked Hype Egg 3", "Titanic Fantasy Present" }
-
---getgenv().GRANK_FIRST = true
-getgenv().GZONE_TO = 999
-getgenv().GFOCUS_RANK_TO = 11
-
-getgenv().GPROGRESS_MODE = "Hybrid"
+getgenv().GLOOTBOXES = {
+	"Locked Hype Egg 3",
+	"Titanic Fantasy Present",
+	"X-Large Fantasy Present",
+	"Large Fantasy Present",
+	"Medium Fantasy Present",
+	"Small Fantasy Present",
+}
+getgenv().GZONE_TO = 1
 getgenv().GGFX_MODE = 1
-
-getgenv().GCLEAR_FAVORITE_PETS = true
-
---getgenv().GHATCH_ENCHANTS = {"Huge Hunter", "Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
---getgenv().GENCHANTS = {"Criticals","Criticals","Criticals","Tap Power","Strong Pets","Huge Hunter","Lucky Eggs"}
---getgenv().GENCHANTS = {"Huge Hunter","Explosive","Lucky Eggs","Criticals","Tap Power","Criticals","Strong Pets","Lucky Eggs"}
+getgenv().GENCHANTS = { "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
 -----------------------
-getgenv().GUSE_SPINNY_WHEEL = true
-getgenv().GAUTO_UPGRADE_PETS = true
-getgenv().GHATCH_BETTER_PETS = true
+
 getgenv().GCOMBINE_KEYS = true
 getgenv().GMASTERY_TO_MAX = "Eggs"
-getgenv().GCONSUME_CHARMS = true
 getgenv().GDAYCARE = true
+
 --------------------------
-getgenv().GHATCH_SPEED_MS = 0
-getgenv().GMAX_EGG_SLOTS = 89
-getgenv().GMAX_EQUIP_SLOTS = 84
 
 getgenv().GHOLD_GIFTS = false
 getgenv().GHOLD_BUNDLES = false
 getgenv().GCONSUME_SEED_BAGS = true
 getgenv().GOPEN_ITEMS_IN_BULK = true
-getgenv().GMAX_ZONE_UPGRADE_COST = 30000000
-
-getgenv().GCOLLECT_FREE_ITEMS = true
-
-getgenv().GUSE_SPRINKLERS = true
-getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
-
-getgenv().GUSE_FLAGS = { "Fortune Flag", "Diamonds Flag", "Coins Flag" }
---getgenv().GEVENT_ITEMS_TO_USE = {"Mini Pinata","Party Box","Mini Lucky Block"}
-getgenv().GFRUITS = { "Watermelon", "Candycane", "Apple", "Rainbow", "Pineapple", "Orange", "Banana" }
-getgenv().GPOTIONS = { "Coins", "Lucky", "The Cocktail", "Huge", "Treasure Hunter", "Walkspeed", "Diamonds", "Damage" }
-getgenv().GPOTIONS_MAX_TIER = 99
 
 getgenv().GKICK_ON_STAFF = true
 
@@ -177,8 +74,6 @@ getgenv().GWEBHOOK_LINK = PRIVATE_CONFIG.WEBHOOK_LINK or ""
 getgenv().GHUGE_COUNT = 0
 getgenv().GMAIL_RECEIVERS = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 getgenv().GMAX_MAIL_COST = "5m"
-
-getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
 
 getgenv().GMAIL_ITEMS = {
 
