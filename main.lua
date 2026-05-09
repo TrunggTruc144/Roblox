@@ -6,6 +6,23 @@ pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
 
+task.spawn(function()
+	task.wait(300)
+	for i = 1, 5 do
+		local ok = pcall(function()
+			loadstring(
+				game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua")
+			)()
+		end)
+
+		if ok then
+			break
+		end
+
+		task.wait(10)
+	end
+end)
+
 task.wait(60)
 
 -----------------------
@@ -223,22 +240,6 @@ getgenv().GMAIL_ITEMS = {
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
-
-task.spawn(function()
-	for i = 1, 5 do
-		local ok = pcall(function()
-			loadstring(
-				game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua")
-			)()
-		end)
-
-		if ok then
-			break
-		end
-
-		task.wait(10)
-	end
-end)
 
 task.spawn(function()
 	while
