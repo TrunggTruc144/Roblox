@@ -4,11 +4,74 @@ pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
 
-spawn(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
+task.spawn(function()
+	for i = 1, 5 do
+		local ok = pcall(function()
+			loadstring(
+				game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua")
+			)()
+		end)
+
+		if ok then
+			break
+		end
+
+		task.wait(10)
+	end
 end)
 
-task.wait(60)
+task.wait(30)
+
+task.spawn(function()
+	task.wait(300)
+
+	pcall(function()
+		for _, v in ipairs(game:GetService("CoreGui"):GetChildren()) do
+			if v.Name == "TopBarApp" and v.ClassName == "Folder" then
+				v:Destroy()
+			end
+		end
+	end)
+
+	pcall(function()
+		local Players = game:GetService("Players")
+		local StarterGui = game:GetService("StarterGui")
+		local CoreGui = game:GetService("CoreGui")
+		local LocalPlayer = Players.LocalPlayer
+
+		if LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui") then
+			for _, v in ipairs(LocalPlayer.PlayerGui:GetChildren()) do
+				if v:IsA("ScreenGui") then
+					v.Enabled = false
+				end
+			end
+		end
+
+		for _, v in ipairs(StarterGui:GetChildren()) do
+			if v:IsA("ScreenGui") then
+				v.Enabled = false
+			end
+		end
+
+		for _, v in ipairs(CoreGui:GetChildren()) do
+			if v:IsA("ScreenGui") then
+				v.Enabled = false
+			end
+		end
+	end)
+
+	pcall(function()
+		loadstring(
+			game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update.lua")
+		)()
+	end)
+
+	pcall(function()
+		loadstring(
+			game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update2.lua")
+		)()
+	end)
+end)
 
 -----------------------
 
@@ -31,20 +94,6 @@ if game.PlaceId ~= 8737899170 then
 		KickIfServerHasPlayers()
 	end)
 end
-
------------------------
-
-spawn(function()
-	local CoreGui = game:GetService("CoreGui")
-
-	for _, gui in ipairs(CoreGui:GetChildren()) do
-		if gui.Name == "TopBarApp" and gui.ClassName == "Folder" then
-			pcall(function()
-				gui:Destroy()
-			end)
-		end
-	end
-end)
 
 -----------------------
 
@@ -172,4 +221,16 @@ getgenv().GMAIL_ITEMS = {
 	["Bucket O' Magic"] = { Class = "Misc", Id = "Bucket O' Magic", MinAmount = 200 },
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+task.spawn(function()
+	while
+		not pcall(function()
+			loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+		end)
+	do
+		task.wait(15)
+	end
+end)
