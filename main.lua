@@ -37,30 +37,42 @@ task.spawn(function()
 		end
 	end)
 
-	pcall(function()
+	local KEEP_GUI = {
+		GuiDefault = true,
+		GuiUpdater = true,
+	}
+
+	local function DisableScreenGuis()
 		local Players = game:GetService("Players")
 		local StarterGui = game:GetService("StarterGui")
 		local CoreGui = game:GetService("CoreGui")
 		local LocalPlayer = Players.LocalPlayer
 
+		local function DisableGui(v)
+			if v:IsA("ScreenGui") and not KEEP_GUI[v.Name] and v.Enabled == true then
+				v.Enabled = false
+			end
+		end
+
 		if LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui") then
 			for _, v in ipairs(LocalPlayer.PlayerGui:GetChildren()) do
-				if v:IsA("ScreenGui") then
-					v.Enabled = false
-				end
+				DisableGui(v)
 			end
 		end
 
 		for _, v in ipairs(StarterGui:GetChildren()) do
-			if v:IsA("ScreenGui") then
-				v.Enabled = false
-			end
+			DisableGui(v)
 		end
 
 		for _, v in ipairs(CoreGui:GetChildren()) do
-			if v:IsA("ScreenGui") then
-				v.Enabled = false
-			end
+			DisableGui(v)
+		end
+	end
+
+	task.spawn(function()
+		while true do
+			pcall(DisableScreenGuis)
+			task.wait(1)
 		end
 	end)
 
