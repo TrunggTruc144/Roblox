@@ -1,5 +1,7 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
+-----------------------
+
 pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
@@ -22,8 +24,10 @@ end)
 
 task.wait(30)
 
+-----------------------
+
 task.spawn(function()
-	task.wait(180)
+	task.wait(300)
 
 	pcall(function()
 		for _, v in ipairs(game:GetService("CoreGui"):GetChildren()) do
