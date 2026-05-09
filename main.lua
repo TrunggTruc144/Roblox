@@ -22,7 +22,7 @@ task.spawn(function()
 	end
 end)
 
-task.wait(30)
+task.wait(60)
 
 -----------------------
 
