@@ -78,9 +78,9 @@ local function startGuiUpdater()
 		return t
 	end
 
-	local right = createRegion(UDim2.new(1, -30, 0, -10), Vector2.new(1, 0), Enum.HorizontalAlignment.Right)
-	local center = createRegion(UDim2.new(0.5, 0, 0, -10), Vector2.new(0.5, 0), Enum.HorizontalAlignment.Center)
-	local left = createRegion(UDim2.new(0, 10, 0, -10), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
+	local left = createRegion(UDim2.new(0, 10, 0, 58), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
+	local center = createRegion(UDim2.new(0, 250, 0, 58), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
+	local right = createRegion(UDim2.new(0, 490, 0, 58), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
 
 	local rankLabel = createLabel("RankLabel", right)
 	local timeTrialLabel = createLabel("TimeTrialLabel", left)
