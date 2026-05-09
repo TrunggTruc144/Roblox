@@ -23,7 +23,7 @@ end)
 task.wait(30)
 
 task.spawn(function()
-	task.wait(300)
+	task.wait(180)
 
 	pcall(function()
 		for _, v in ipairs(game:GetService("CoreGui"):GetChildren()) do
