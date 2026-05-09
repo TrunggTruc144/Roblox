@@ -66,6 +66,7 @@ task.spawn(function()
 		)()
 	end)
 
+	task.wait(2)
 	pcall(function()
 		loadstring(
 			game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update2.lua")
