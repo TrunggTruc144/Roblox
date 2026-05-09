@@ -92,7 +92,7 @@ local function startGuiDefault()
 
 	local leftRegion = createRegion(UDim2.new(0, 10, 0, 8), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
 	local centerRegion = createRegion(UDim2.new(0, 250, 0, 8), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
-	local rightRegion = createRegion(UDim2.new(0, 490, 0, 8), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
+	local rightRegion = createRegion(UDim2.new(0, 540, 0, 8), Vector2.new(0, 0), Enum.HorizontalAlignment.Left)
 
 	local fpsLabel = createLabel("FPSLabel", rightRegion, Color3.fromRGB(0, 102, 204))
 	local timeLabel = createLabel("TimesLabel", centerRegion, Color3.fromRGB(0, 102, 204))

@@ -60,18 +60,16 @@ task.spawn(function()
 		end
 	end)
 
-	pcall(function()
-		loadstring(
-			game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update.lua")
-		)()
-	end)
+	local function LoadInfo(url)
+		task.spawn(function()
+			pcall(function()
+				loadstring(game:HttpGet(url))()
+			end)
+		end)
+	end
 
-	task.wait(2)
-	pcall(function()
-		loadstring(
-			game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update2.lua")
-		)()
-	end)
+	LoadInfo("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update.lua")
+	LoadInfo("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Info_update2.lua")
 end)
 
 -----------------------
