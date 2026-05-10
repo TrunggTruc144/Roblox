@@ -6,8 +6,8 @@ local FPS_CONFIG = {
 	},
 
 	TIME_TRIAL = {
-		fps = 7,
-		allowed = { 6, 7, 8 },
+		fps = 5,
+		allowed = { 4, 5, 6 },
 	},
 }
 
