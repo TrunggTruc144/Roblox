@@ -82,6 +82,10 @@ local function LoadEventRNGConfig()
 		task.wait(20)
 	end
 
+	pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
+	end)
+
 	getgenv().GLOOTBOXES = {
 		"Locked Hype Egg 3",
 		"Titanic Fantasy Present",
