@@ -1,34 +1,14 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
-pcall(function()
-	game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Core["Idle Tracking"].Enabled = false
-end)
+if game.PlaceId ~= 8737899170 then
+	task.spawn(function()
+		pcall(function()
+			game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+		end)
+	end)
 
-pcall(function()
-	if getconnections then
-		for _, v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
-			v:Disable()
-		end
-	end
-end)
-
-local function simulateActivity()
-	local VirtualUser = game:GetService("VirtualUser")
-	local camera = workspace.CurrentCamera
-
-	if camera then
-		VirtualUser:Button2Down(Vector2.new(0, 0), camera.CFrame)
-		task.wait(1)
-		VirtualUser:Button2Up(Vector2.new(0, 0), camera.CFrame)
-	end
+	task.wait(20)
 end
-
-task.spawn(function()
-	while true do
-		task.wait(900)
-		pcall(simulateActivity)
-	end
-end)
 
 pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
