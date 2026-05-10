@@ -216,7 +216,8 @@ for i = 1, 10 do
 		local rank = Save.Get().Rank or 0
 
 		if rank >= 20 then
-			LoadLastAreaFarmConfig()
+			--LoadLastAreaFarmConfig()
+			LoadEventRNGConfig()
 		else
 			LoadEventRNGConfig()
 		end
