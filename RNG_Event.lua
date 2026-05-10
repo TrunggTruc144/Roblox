@@ -60,10 +60,10 @@ getgenv().PetSimulator99 = {
 	--event
 	UseDice = { "Lucky Dice V2", "Lucky Dice II V2", "Mega Lucky Dice V2", "Mega Lucky Dice II V2" },
 	RngUpgrades = {
-		RNGHugeLuck = { MaxTier = 999 },
-		RNGEggLuck = { MaxTier = 999 },
-		RNGHatchSpeed = { MaxTier = 999 },
-		RNGBonusLuck = { MaxTier = 999 },
+		RNGHugeLuck = { MaxTier = 15 },
+		RNGEggLuck = { MaxTier = 15 },
+		RNGHatchSpeed = { MaxTier = 8 },
+		RNGBonusLuck = { MaxTier = 13 },
 	},
 	CraftToDice = "Mega Lucky Dice II V2",
 	CraftDiceAmount = "Max", -- can 1,2,3...
