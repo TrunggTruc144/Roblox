@@ -2,7 +2,7 @@
 local FPS_CONFIG = {
 	DEFAULT = {
 		fps = 2,
-		allowed = { 1, 2, 3 },
+		allowed = { 1, 2 },
 	},
 
 	TIME_TRIAL = {
