@@ -1,8 +1,8 @@
 -- Cấu hình FPS
 local FPS_CONFIG = {
 	DEFAULT = {
-		fps = 2,
-		allowed = { 1, 2, 3, 4 },
+		fps = 5,
+		allowed = { 3, 4, 5, 6 },
 	},
 
 	TIME_TRIAL = {
