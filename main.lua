@@ -32,8 +32,8 @@ local function ApplyCommonMailConfig()
 		["Secret 7"] = { Class = "Pet", Id = "Lucky Clover", MinAmount = 1 },
 		["Secret 8"] = { Class = "Pet", Id = "Mystery", MinAmount = 1 },
 
-		["Exclusive Egg 57"] = { Class = "Egg", Id = "Exclusive Egg 59", MinAmount = 1 },
-		["Exclusive Egg 58"] = { Class = "Egg", Id = "Exclusive Egg 59", MinAmount = 1 },
+		["Exclusive Egg 57"] = { Class = "Egg", Id = "Exclusive Egg 57", MinAmount = 1 },
+		["Exclusive Egg 58"] = { Class = "Egg", Id = "Exclusive Egg 58", MinAmount = 1 },
 		["Exclusive Egg 59"] = { Class = "Egg", Id = "Exclusive Egg 59", MinAmount = 1 },
 		["Exclusive Egg 60"] = { Class = "Egg", Id = "Exclusive Egg 60", MinAmount = 1 },
 		["Exclusive Egg 61"] = { Class = "Egg", Id = "Exclusive Egg 61", MinAmount = 1 },
