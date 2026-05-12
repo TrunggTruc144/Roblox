@@ -123,6 +123,8 @@ local function LoadEventRNGConfig()
 	ApplyCommonMailConfig()
 end
 
+task.wait(30)
+
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
