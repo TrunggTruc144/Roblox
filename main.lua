@@ -69,23 +69,6 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadEventRNGConfig()
-	if game.PlaceId ~= 8737899170 then
-		task.spawn(function()
-			pcall(function()
-				game:GetService("ReplicatedStorage")
-					:WaitForChild("Network")
-					:WaitForChild("World1Teleport")
-					:InvokeServer()
-			end)
-		end)
-
-		task.wait(20)
-	end
-
-	pcall(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
-	end)
-
 	getgenv().GLOOTBOXES = {
 		"Locked Hype Egg 3",
 		"Titanic Fantasy Present",
@@ -122,6 +105,19 @@ local function LoadEventRNGConfig()
 
 	ApplyCommonMailConfig()
 end
+
+if game.PlaceId ~= 8737899170 then
+	pcall(function()
+		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+	end)
+
+	task.wait(20)
+	return
+end
+
+pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
+end)
 
 task.wait(30)
 
