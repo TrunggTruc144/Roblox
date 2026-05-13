@@ -119,7 +119,7 @@ pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
 end)
 
-task.wait(30)
+task.wait(60)
 
 if not game:IsLoaded() then
 	game.Loaded:Wait()
