@@ -1,7 +1,5 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
-task.wait(10)
-
 if game.PlaceId ~= 8737899170 then
 	pcall(function()
 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
