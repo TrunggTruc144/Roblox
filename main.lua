@@ -123,7 +123,7 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
-task.wait(30)
+task.wait(10)
 
 LoadEventRNGConfig()
 
