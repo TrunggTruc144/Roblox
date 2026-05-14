@@ -119,6 +119,8 @@ pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
 end)
 
+task.wait(30)
+
 LoadEventRNGConfig()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
