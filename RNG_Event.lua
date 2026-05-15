@@ -21,6 +21,7 @@ getgenv().Configuration = {
 		["Items"] = {
 			["Pet"] = {},
 		},
+		["Max Mail Tax"] = 5000000,
 	},
 
 	["Dice On Bonus Only"] = true,
@@ -30,6 +31,7 @@ getgenv().Configuration = {
 	["Sell Pets"] = {
 		["Sand Turtle"] = true,
 		["Sprout Stag"] = true,
+		["Blossom Fox"] = true,
 		["Error Dragon"] = true,
 		["Honey Bee"] = true,
 		["Chameleon"] = true,
@@ -38,6 +40,7 @@ getgenv().Configuration = {
 		["Starry Eye Wolf"] = true,
 		["Sapphire Dragon"] = true,
 		["Wisp Owl"] = true,
+		["Surge Wolf"] = true,
 		["Mystical Kitsune"] = true,
 	},
 
