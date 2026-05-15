@@ -115,11 +115,11 @@ if game.PlaceId ~= 8737899170 then
 	return
 end
 
-pcall(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
-end)
+-- pcall(function()
+-- 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
+-- end)
 
-task.wait(30)
+task.wait(20)
 
 LoadEventRNGConfig()
 
