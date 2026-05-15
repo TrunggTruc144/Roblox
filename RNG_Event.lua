@@ -27,10 +27,22 @@ getgenv().Configuration = {
 	["Craft Dice"] = "Mega Lucky Dice II V2",
 	["Use Dice"] = true,
 	["Upgrades"] = true,
-	["Sell Pets"] = {},
+	["Sell Pets"] = {
+		["Sand Turtle"] = true,
+		["Sprout Stag"] = true,
+		["Error Dragon"] = true,
+		["Honey Bee"] = true,
+		["Chameleon"] = true,
+		["Tiedye Elephant"] = true,
+		["Bubble Bunny"] = true,
+		["Starry Eye Wolf"] = true,
+		["Sapphire Dragon"] = true,
+		["Wisp Owl"] = true,
+		["Mystical Kitsune"] = true,
+	},
 
 	["Potions"] = {},
-	["Enchants"] = {},
+	["Enchants"] = { "Criticals", "Explosive", "Blast", "Tap Teamwork", "Tap Power", "Strong Pets" },
 	["Fruits"] = {},
 }
 
