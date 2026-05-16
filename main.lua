@@ -117,8 +117,6 @@ if game.PlaceId ~= 8737899170 then
 	return
 end
 
-task.wait(20)
-
 LoadEventRNGConfig()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
