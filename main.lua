@@ -109,7 +109,7 @@ local function LoadEventRNGConfig()
 		"Lucky Dice III V2",
 		"Mega Lucky Dice V2",
 		"Mega Lucky Dice II V2",
-		-- "Fire Dice V2",
+		"Fire Dice V2",
 	}
 	getgenv().GRNG_USE_MEGA1 = false
 
