@@ -1,5 +1,9 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
+pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
+end)
+
 local function ApplyCommonMailConfig()
 	getgenv().GWEBHOOK_USERID = PRIVATE_CONFIG.WEBHOOK_USERID or ""
 	getgenv().GWEBHOOK_LINK = PRIVATE_CONFIG.WEBHOOK_LINK or ""
@@ -112,10 +116,6 @@ if game.PlaceId ~= 8737899170 then
 	task.wait(20)
 	return
 end
-
-pcall(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
-end)
 
 task.wait(20)
 
