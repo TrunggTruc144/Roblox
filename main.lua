@@ -5,7 +5,6 @@ pcall(function()
 end)
 
 local function ApplyCommonMailConfig()
-	getgenv().GKICK_ON_STAFF = true
 	getgenv().GWEBHOOK_USERID = PRIVATE_CONFIG.WEBHOOK_USERID or ""
 	getgenv().GWEBHOOK_LINK = PRIVATE_CONFIG.WEBHOOK_LINK or ""
 
@@ -96,14 +95,22 @@ local function LoadEventRNGConfig()
 
 	getgenv().GDO_RNG_INSTANCE = true
 	getgenv().GEVENT_UPGRADES = {
-		{ Id = "RNGEggLuck", MaxTier = 15 },
+		{ Id = "RNGEggLuck", MaxTier = 20 },
 		{ Id = "RNGHatchSpeed", MaxTier = 15 },
-		{ Id = "RNGBonusLuck", MaxTier = 8 },
-		{ Id = "RNGHugeLuck", MaxTier = 13 },
+		{ Id = "RNGBonusLuck", MaxTier = 10 },
+		{ Id = "RNGHugeLuck", MaxTier = 15 },
+		{ Id = "RNGExtraEgg", MaxTier = 8 },
 	}
 	getgenv().GUSE_BOOSTS = true
 	getgenv().GRNG_SELL_PETS = true
 	getgenv().GRNG_CRAFT_DICE = true
+	getgenv().GRNG_CRAFT_DICE_SELECT = {
+		"Lucky Dice II V2",
+		"Lucky Dice III V2",
+		"Mega Lucky Dice V2",
+		"Mega Lucky Dice II V2",
+		-- "Fire Dice V2",
+	}
 	getgenv().GRNG_USE_MEGA1 = false
 
 	ApplyCommonMailConfig()
