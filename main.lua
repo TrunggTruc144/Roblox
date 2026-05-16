@@ -1,8 +1,6 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 local function ApplyCommonMailConfig()
-	getgenv().GKICK_ON_STAFF = true
-
 	getgenv().GWEBHOOK_USERID = PRIVATE_CONFIG.WEBHOOK_USERID or ""
 	getgenv().GWEBHOOK_LINK = PRIVATE_CONFIG.WEBHOOK_LINK or ""
 
