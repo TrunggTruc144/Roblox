@@ -112,6 +112,7 @@ local function LoadEventRNGConfig()
 		"Fire Dice V2",
 	}
 	getgenv().GRNG_USE_MEGA1 = false
+	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING = true
 
 	ApplyCommonMailConfig()
 end
