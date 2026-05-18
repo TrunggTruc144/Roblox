@@ -125,7 +125,7 @@ if game.PlaceId ~= 8737899170 then
 	return
 end
 
-task.wait(60)
+task.wait(120)
 
 LoadEventRNGConfig()
 
