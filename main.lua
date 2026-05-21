@@ -16,7 +16,7 @@ local function ApplyCommonMailConfig()
 
 		["Send Diamonds"] = { Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "35m" },
 
-		--["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
+		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
 		["All Sea Dragons"] = { Class = "Card", Id = "Huge Sea Dragon Card", MinAmount = 1, AllVariants = true },
 		["Ghostly Pack"] = { Class = "Lootbox", Id = "Ghostly Pack", MinAmount = 1 },
 		["Time Trial Gift 2"] = { Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 18 },
