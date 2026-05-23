@@ -1,5 +1,13 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
+local LOADER_URL = "https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+pcall(function()
+	game:GetService("RunService"):Set3dRenderingEnabled(false)
+end)
+
 pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
 end)
@@ -13,7 +21,6 @@ local function ApplyCommonMailConfig()
 	getgenv().GMAX_MAIL_COST = "5m"
 
 	getgenv().GMAIL_ITEMS = {
-
 		["Send Diamonds"] = { Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "35m" },
 
 		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
@@ -50,7 +57,7 @@ local function ApplyCommonMailConfig()
 		["Huge Machine Egg 5"] = { Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1 },
 		["Huge Machine Egg 4"] = { Class = "Egg", Id = "Huge Machine Egg 4", MinAmount = 1 },
 		["Huge Machine Egg 3"] = { Class = "Egg", Id = "Huge Machine Egg 3", MinAmount = 1 },
-		["Huge Machine Egg 2"] = { Class = "Egg", Id = "Huge Machine Egg 3", MinAmount = 1 },
+		["Huge Machine Egg 2"] = { Class = "Egg", Id = "Huge Machine Egg 2", MinAmount = 1 },
 		["Huge Machine Egg 1"] = { Class = "Egg", Id = "Huge Machine Egg 1", MinAmount = 1 },
 
 		["MVP Key Upper Half"] = { Class = "Misc", Id = "MVP Key Upper Half", MinAmount = 50 },
@@ -71,14 +78,7 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadEventRNGConfig()
-	getgenv().GLOOTBOXES = {
-		"Locked Hype Egg 3",
-		"Titanic Fantasy Present",
-		"X-Large Fantasy Present",
-		"Large Fantasy Present",
-		"Medium Fantasy Present",
-		"Small Fantasy Present",
-	}
+	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
 
 	getgenv().GZONE_TO = 1
 	getgenv().GGFX_MODE = 1
@@ -100,6 +100,7 @@ local function LoadEventRNGConfig()
 		{ Id = "RNGHugeLuck", MaxTier = 15 },
 		{ Id = "RNGExtraEgg", MaxTier = 8 },
 	}
+
 	getgenv().GUSE_BOOSTS = true
 	getgenv().GRNG_SELL_PETS = true
 	getgenv().GRNG_CRAFT_DICE = true
@@ -110,23 +111,119 @@ local function LoadEventRNGConfig()
 		"Mega Lucky Dice II V2",
 		"Fire Dice V2",
 	}
+
 	getgenv().GRNG_USE_MEGA1 = false
 	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 10
 
 	ApplyCommonMailConfig()
 end
 
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
+local function LoadFarmConfig()
+	getgenv().GDO_TIME_TRIAL = true
+	getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	getgenv().GTIME_TRIAL_ENCHANTS =
+		{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
-	task.wait(20)
-	return
+	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
+
+	getgenv().GRANK_FIRST = true
+	getgenv().GZONE_TO = 1
+	getgenv().GFOCUS_RANK_TO = 11
+
+	getgenv().GPROGRESS_MODE = "Hybrid"
+	getgenv().GGFX_MODE = 1
+	getgenv().GCLEAR_FAVORITE_PETS = true
+
+	getgenv().GENCHANTS = {
+		"Huge Hunter",
+		"Criticals",
+		"Criticals",
+		"Tap Power",
+		"Strong Pets",
+		"Explosive",
+		"Lucky Eggs",
+	}
+
+	getgenv().GUSE_SPINNY_WHEEL = true
+	getgenv().GAUTO_UPGRADE_PETS = true
+	getgenv().GHATCH_BETTER_PETS = true
+	getgenv().GCOMBINE_KEYS = true
+	getgenv().GMASTERY_TO_MAX = "Eggs"
+	getgenv().GCONSUME_CHARMS = true
+	getgenv().GDAYCARE = true
+
+	getgenv().GHATCH_SPEED_MS = 0
+	getgenv().GMAX_EGG_SLOTS = 89
+	getgenv().GMAX_EQUIP_SLOTS = 84
+
+	getgenv().GHOLD_GIFTS = false
+	getgenv().GHOLD_BUNDLES = false
+	getgenv().GCONSUME_SEED_BAGS = true
+	getgenv().GOPEN_ITEMS_IN_BULK = true
+	getgenv().GMAX_ZONE_UPGRADE_COST = 30000000
+
+	getgenv().GCOLLECT_FREE_ITEMS = true
+
+	getgenv().GUSE_SPRINKLERS = true
+	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
+	getgenv().GUSE_FLAGS = { "Fortune Flag", "Diamonds Flag", "Coins Flag" }
+	getgenv().GFRUITS = { "Watermelon", "Candycane", "Apple", "Rainbow", "Pineapple", "Orange", "Banana" }
+	getgenv().GPOTIONS =
+		{ "Coins", "Lucky", "The Cocktail", "Huge", "Treasure Hunter", "Walkspeed", "Diamonds", "Damage" }
+	getgenv().GPOTIONS_MAX_TIER = 99
+
+	getgenv().GKICK_ON_STAFF = false
+	getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
+
+	ApplyCommonMailConfig()
 end
 
-task.wait(30)
+local function GetRankAndRebirth()
+	for i = 1, 30 do
+		local ok, saveData = pcall(function()
+			local Library = ReplicatedStorage:WaitForChild("Library", 10)
+			local Client = Library:WaitForChild("Client", 10)
+			local Save = require(Client:WaitForChild("Save", 10))
+			return Save.Get()
+		end)
 
-LoadEventRNGConfig()
+		if ok and type(saveData) == "table" then
+			local rank = tonumber(saveData.Rank) or 0
+			local rebirth = tonumber(saveData.Rebirths) or 0
+			return rank, rebirth
+		end
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+		warn("[ConfigSelector] Waiting for Save data... Attempt:", i)
+		task.wait(3)
+	end
+
+	return 0, 0
+end
+
+task.wait(10)
+
+local rank, rebirth = GetRankAndRebirth()
+
+warn("[ConfigSelector] Rank:", rank, "| Rebirths:", rebirth)
+
+if rank >= 11 and rebirth >= 9 then
+	warn("[ConfigSelector] Loading RNGEvent config")
+
+	if game.PlaceId ~= 8737899170 then
+		pcall(function()
+			game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+		end)
+
+		task.wait(20)
+		return
+	end
+
+	LoadEventRNGConfig()
+else
+	warn("[ConfigSelector] Loading Farm config")
+	LoadFarmConfig()
+end
+
+loadstring(game:HttpGet(LOADER_URL))()
