@@ -4,6 +4,10 @@ local LOADER_URL = "https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc0430
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+local TARGET_RANK = 11
+local TARGET_REBIRTHS = 9
+local WATCH_RANK_DELAY = 60
+
 pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
@@ -180,12 +184,16 @@ local function LoadFarmConfig()
 	ApplyCommonMailConfig()
 end
 
+local function GetSaveModule()
+	local Library = ReplicatedStorage:WaitForChild("Library", 10)
+	local Client = Library:WaitForChild("Client", 10)
+	return require(Client:WaitForChild("Save", 10))
+end
+
 local function GetRankAndRebirth()
 	for i = 1, 30 do
 		local ok, saveData = pcall(function()
-			local Library = ReplicatedStorage:WaitForChild("Library", 10)
-			local Client = Library:WaitForChild("Client", 10)
-			local Save = require(Client:WaitForChild("Save", 10))
+			local Save = GetSaveModule()
 			return Save.Get()
 		end)
 
@@ -202,13 +210,71 @@ local function GetRankAndRebirth()
 	return 0, 0
 end
 
+local function WatchRankRebirthForEvent()
+	task.spawn(function()
+		local Players = game:GetService("Players")
+		local LocalPlayer = Players.LocalPlayer
+
+		local Save
+
+		for i = 1, 30 do
+			local ok = pcall(function()
+				Save = GetSaveModule()
+			end)
+
+			if ok and Save then
+				break
+			end
+
+			warn("[RankWatcher] Waiting for Save module... Attempt:", i)
+			task.wait(3)
+		end
+
+		if not Save then
+			warn("[RankWatcher] Failed to load Save module")
+			return
+		end
+
+		local lastRank = -1
+		local lastRebirths = -1
+
+		while true do
+			local ok, saveData = pcall(function()
+				return Save.Get()
+			end)
+
+			if ok and type(saveData) == "table" then
+				local rank = tonumber(saveData.Rank) or 0
+				local rebirths = tonumber(saveData.Rebirths) or 0
+
+				if rank ~= lastRank or rebirths ~= lastRebirths then
+					lastRank = rank
+					lastRebirths = rebirths
+					warn("[RankWatcher] Rank:", rank, "| Rebirths:", rebirths)
+				end
+
+				if rank >= TARGET_RANK and rebirths >= TARGET_REBIRTHS then
+					warn("[RankWatcher] Target reached, kicking to rejoin RNGEvent...")
+					task.wait(3)
+					LocalPlayer:Kick("Rank/Rebirth target reached - rejoin for RNGEvent")
+					break
+				end
+			else
+				warn("[RankWatcher] Failed to read Save data")
+			end
+
+			task.wait(WATCH_RANK_DELAY)
+		end
+	end)
+end
+
 task.wait(10)
 
 local rank, rebirth = GetRankAndRebirth()
 
 warn("[ConfigSelector] Rank:", rank, "| Rebirths:", rebirth)
 
-if rank >= 11 and rebirth >= 9 then
+if rank >= TARGET_RANK and rebirth >= TARGET_REBIRTHS then
 	warn("[ConfigSelector] Loading RNGEvent config")
 
 	if game.PlaceId ~= 8737899170 then
@@ -224,6 +290,7 @@ if rank >= 11 and rebirth >= 9 then
 else
 	warn("[ConfigSelector] Loading Farm config")
 	LoadFarmConfig()
+	WatchRankRebirthForEvent()
 end
 
 loadstring(game:HttpGet(LOADER_URL))()
