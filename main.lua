@@ -133,7 +133,7 @@ local function LoadFarmConfig()
 	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
 
 	getgenv().GRANK_FIRST = true
-	getgenv().GZONE_TO = 1
+	getgenv().GZONE_TO = 999
 	getgenv().GFOCUS_RANK_TO = 11
 
 	getgenv().GPROGRESS_MODE = "Hybrid"
