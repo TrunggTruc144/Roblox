@@ -2,11 +2,13 @@ local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 local LOADER_URL = "https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"
 
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
 
 local TARGET_RANK = 11
 local TARGET_REBIRTHS = 9
-local WATCH_RANK_DELAY = 60
+local CHECK_DELAY = 60
 
 pcall(function()
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
@@ -123,16 +125,16 @@ local function LoadEventRNGConfig()
 end
 
 local function LoadFarmConfig()
-	getgenv().GDO_TIME_TRIAL = true
-	getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
-	getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
-	getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
-	getgenv().GTIME_TRIAL_ENCHANTS =
-		{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
+	-- getgenv().GDO_TIME_TRIAL = true
+	-- getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	-- getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	-- getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	-- getgenv().GTIME_TRIAL_ENCHANTS =
+	-- 	{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
 	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
 
-	getgenv().GRANK_FIRST = true
+	-- getgenv().GRANK_FIRST = true
 	getgenv().GZONE_TO = 999
 	getgenv().GFOCUS_RANK_TO = 11
 
@@ -184,113 +186,71 @@ local function LoadFarmConfig()
 	ApplyCommonMailConfig()
 end
 
-local function GetSaveModule()
-	local Library = ReplicatedStorage:WaitForChild("Library", 10)
-	local Client = Library:WaitForChild("Client", 10)
-	return require(Client:WaitForChild("Save", 10))
+task.wait(10)
+
+local Save = require(ReplicatedStorage.Library.Client.Save)
+
+local function getData()
+	return Save.Get() or {}
 end
 
-local function GetRankAndRebirth()
-	for i = 1, 30 do
-		local ok, saveData = pcall(function()
-			local Save = GetSaveModule()
-			return Save.Get()
+local function getRankRebirth()
+	local data = getData()
+	return data.Rank or 0, data.Rebirths or 0
+end
+
+local function RunLuarmor()
+	warn("[Mode] Loading Luarmor")
+	loadstring(game:HttpGet(LOADER_URL))()
+end
+
+local function EventMode()
+	warn("[Mode] EventMode")
+
+	if game.PlaceId ~= 8737899170 then
+		pcall(function()
+			ReplicatedStorage:WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
 		end)
 
-		if ok and type(saveData) == "table" then
-			local rank = tonumber(saveData.Rank) or 0
-			local rebirth = tonumber(saveData.Rebirths) or 0
-			return rank, rebirth
-		end
-
-		warn("[ConfigSelector] Waiting for Save data... Attempt:", i)
-		task.wait(3)
+		task.wait(20)
+		return
 	end
 
-	return 0, 0
+	LoadEventRNGConfig()
+	RunLuarmor()
 end
 
-local function WatchRankRebirthForEvent()
+local function FarmMode()
+	warn("[Mode] FarmMode")
+
+	LoadFarmConfig()
+
 	task.spawn(function()
-		local Players = game:GetService("Players")
-		local LocalPlayer = Players.LocalPlayer
-
-		local Save
-
-		for i = 1, 30 do
-			local ok = pcall(function()
-				Save = GetSaveModule()
-			end)
-
-			if ok and Save then
-				break
-			end
-
-			warn("[RankWatcher] Waiting for Save module... Attempt:", i)
-			task.wait(3)
-		end
-
-		if not Save then
-			warn("[RankWatcher] Failed to load Save module")
-			return
-		end
-
-		local lastRank = -1
-		local lastRebirths = -1
-
-		while true do
-			local ok, saveData = pcall(function()
-				return Save.Get()
-			end)
-
-			if ok and type(saveData) == "table" then
-				local rank = tonumber(saveData.Rank) or 0
-				local rebirths = tonumber(saveData.Rebirths) or 0
-
-				if rank ~= lastRank or rebirths ~= lastRebirths then
-					lastRank = rank
-					lastRebirths = rebirths
-					warn("[RankWatcher] Rank:", rank, "| Rebirths:", rebirths)
-				end
-
-				if rank >= TARGET_RANK and rebirths >= TARGET_REBIRTHS then
-					warn("[RankWatcher] Target reached, kicking to rejoin RNGEvent...")
-					task.wait(3)
-					LocalPlayer:Kick("Rank/Rebirth target reached - rejoin for RNGEvent")
-					break
-				end
-			else
-				warn("[RankWatcher] Failed to read Save data")
-			end
-
-			task.wait(WATCH_RANK_DELAY)
-		end
+		RunLuarmor()
 	end)
+
+	while true do
+		local rank, rebirth = getRankRebirth()
+
+		warn("[CHECK]", "Rank:", rank, "| Rebirths:", rebirth)
+
+		if rank >= TARGET_RANK and rebirth >= TARGET_REBIRTHS then
+			warn("[Mode] Farm done, kicking to rejoin EventMode")
+			task.wait(3)
+			LocalPlayer:Kick("Rank/Rebirth target reached - rejoin for EventMode")
+			break
+		end
+
+		task.wait(CHECK_DELAY)
+	end
 end
 
-task.wait(30)
+local rank, rebirth = getRankRebirth()
 
-local rank, rebirth = GetRankAndRebirth()
-
-warn("[ConfigSelector] Rank:", rank, "| Rebirths:", rebirth)
+warn("[StartCheck]", "Rank:", rank, "| Rebirths:", rebirth)
 
 if rank >= TARGET_RANK and rebirth >= TARGET_REBIRTHS then
-	warn("[ConfigSelector] Loading RNGEvent config")
-
-	-- if game.PlaceId ~= 8737899170 then
-	-- 	pcall(function()
-	-- 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	-- 	end)
-
-	-- 	task.wait(20)
-	-- 	return
-	-- end
-
-	LoadEventRNGConfig()
+	EventMode()
 else
-	warn("[ConfigSelector] Loading Farm config")
-	LoadFarmConfig()
-	WatchRankRebirthForEvent()
+	FarmMode()
 end
-
-loadstring(game:HttpGet(LOADER_URL))()
