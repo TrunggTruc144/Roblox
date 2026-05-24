@@ -185,13 +185,13 @@ local function LoadFarmConfig()
 end
 
 local function GetSaveModule()
-	local Library = ReplicatedStorage:WaitForChild("Library", 5)
-	local Client = Library:WaitForChild("Client", 5)
-	return require(Client:WaitForChild("Save", 5))
+	local Library = ReplicatedStorage:WaitForChild("Library", 10)
+	local Client = Library:WaitForChild("Client", 10)
+	return require(Client:WaitForChild("Save", 10))
 end
 
 local function GetRankAndRebirth()
-	for i = 1, 10 do
+	for i = 1, 30 do
 		local ok, saveData = pcall(function()
 			local Save = GetSaveModule()
 			return Save.Get()
