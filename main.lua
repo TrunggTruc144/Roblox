@@ -84,7 +84,7 @@ end
 local function LoadEventRNGConfig()
 	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
 
-	getgenv().GZONE_TO = 999
+	getgenv().GZONE_TO = 1
 	getgenv().GGFX_MODE = 1
 	getgenv().GENCHANTS = {
 		"Criticals",
@@ -268,7 +268,7 @@ local function WatchRankRebirthForEvent()
 	end)
 end
 
-task.wait(10)
+task.wait(30)
 
 local rank, rebirth = GetRankAndRebirth()
 
