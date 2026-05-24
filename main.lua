@@ -84,7 +84,7 @@ end
 local function LoadEventRNGConfig()
 	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
 
-	getgenv().GZONE_TO = 1
+	getgenv().GZONE_TO = 999
 	getgenv().GGFX_MODE = 1
 	getgenv().GENCHANTS = {
 		"Criticals",
