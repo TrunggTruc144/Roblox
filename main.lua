@@ -277,14 +277,14 @@ warn("[ConfigSelector] Rank:", rank, "| Rebirths:", rebirth)
 if rank >= TARGET_RANK and rebirth >= TARGET_REBIRTHS then
 	warn("[ConfigSelector] Loading RNGEvent config")
 
-	if game.PlaceId ~= 8737899170 then
-		pcall(function()
-			game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-		end)
+	-- if game.PlaceId ~= 8737899170 then
+	-- 	pcall(function()
+	-- 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+	-- 	end)
 
-		task.wait(20)
-		return
-	end
+	-- 	task.wait(20)
+	-- 	return
+	-- end
 
 	LoadEventRNGConfig()
 else
