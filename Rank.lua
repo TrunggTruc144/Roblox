@@ -70,56 +70,70 @@ local function ApplyCommonMailConfig()
 	}
 end
 
-local function LoadEventRNGConfig()
-	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
+local function LoadFarmConfig()
+	-- getgenv().GDO_TIME_TRIAL = true
+	-- getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	-- getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	-- getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	-- getgenv().GTIME_TRIAL_ENCHANTS =
+	-- 	{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
-	getgenv().GZONE_TO = 1
+	getgenv().GLOOTBOXES = { "Locked Hype Egg 3", "Titanic Fantasy Present" }
+
+	-- getgenv().GRANK_FIRST = true
+	getgenv().GZONE_TO = 999
+	--getgenv().GFOCUS_RANK_TO = 11
+
+	getgenv().GPROGRESS_MODE = "Hybrid"
 	getgenv().GGFX_MODE = 1
+	getgenv().GCLEAR_FAVORITE_PETS = true
+
 	getgenv().GENCHANTS = {
+		"Huge Hunter",
 		"Criticals",
 		"Criticals",
+		"Tap Power",
 		"Strong Pets",
-		"Strong Pets",
-		"Strong Pets",
-		"Strong Pets",
-		"Criticals",
+		"Explosive",
+		"Lucky Eggs",
 	}
 
-	getgenv().GDO_RNG_INSTANCE = true
-	getgenv().GEVENT_UPGRADES = {
-		{ Id = "RNGEggLuck", MaxTier = 20 },
-		{ Id = "RNGHatchSpeed", MaxTier = 15 },
-		{ Id = "RNGBonusLuck", MaxTier = 10 },
-		{ Id = "RNGHugeLuck", MaxTier = 15 },
-		{ Id = "RNGExtraEgg", MaxTier = 8 },
-	}
-	getgenv().GUSE_BOOSTS = true
-	getgenv().GRNG_SELL_PETS = true
-	getgenv().GRNG_CRAFT_DICE = true
-	getgenv().GRNG_CRAFT_DICE_SELECT = {
-		"Lucky Dice II V2",
-		"Lucky Dice III V2",
-		"Mega Lucky Dice V2",
-		"Mega Lucky Dice II V2",
-		"Fire Dice V2",
-	}
-	getgenv().GRNG_USE_MEGA1 = false
-	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 10
+	getgenv().GUSE_SPINNY_WHEEL = true
+	getgenv().GAUTO_UPGRADE_PETS = true
+	getgenv().GHATCH_BETTER_PETS = true
+	getgenv().GCOMBINE_KEYS = true
+	getgenv().GMASTERY_TO_MAX = "Economy"
+	getgenv().GCONSUME_CHARMS = true
+	getgenv().GDAYCARE = true
+
+	getgenv().GHATCH_SPEED_MS = 0
+	getgenv().GMAX_EGG_SLOTS = 89
+	getgenv().GMAX_EQUIP_SLOTS = 84
+
+	getgenv().GHOLD_GIFTS = false
+	getgenv().GHOLD_BUNDLES = false
+	getgenv().GCONSUME_SEED_BAGS = true
+	getgenv().GOPEN_ITEMS_IN_BULK = true
+	getgenv().GMAX_ZONE_UPGRADE_COST = 200000000
+
+	getgenv().GCOLLECT_FREE_ITEMS = true
+
+	getgenv().GUSE_SPRINKLERS = true
+	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
+	getgenv().GUSE_FLAGS = { "Fortune Flag", "Diamonds Flag", "Coins Flag" }
+	getgenv().GFRUITS = { "Watermelon", "Candycane", "Apple", "Rainbow", "Pineapple", "Orange", "Banana" }
+	getgenv().GPOTIONS =
+		{ "Coins", "Lucky", "The Cocktail", "Huge", "Treasure Hunter", "Walkspeed", "Diamonds", "Damage" }
+	getgenv().GPOTIONS_MAX_TIER = 99
+
+	getgenv().GKICK_ON_STAFF = false
+	getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
 
 	ApplyCommonMailConfig()
 end
 
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
-
-	task.wait(20)
-	return
-end
-
 task.wait(10)
 
-LoadEventRNGConfig()
+LoadFarmConfig()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
