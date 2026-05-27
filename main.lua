@@ -82,6 +82,7 @@ local function LoadFarmConfig()
 
 	-- getgenv().GRANK_FIRST = true
 	getgenv().GZONE_TO = 999
+	getgenv().GRANK_TO = 40
 	--getgenv().GFOCUS_RANK_TO = 11
 
 	getgenv().GPROGRESS_MODE = "Hybrid"
@@ -107,8 +108,8 @@ local function LoadFarmConfig()
 	getgenv().GDAYCARE = true
 
 	getgenv().GHATCH_SPEED_MS = 0
-	getgenv().GMAX_EGG_SLOTS = 89
-	getgenv().GMAX_EQUIP_SLOTS = 84
+	getgenv().GMAX_EGG_SLOTS = 99
+	getgenv().GMAX_EQUIP_SLOTS = 99
 
 	getgenv().GHOLD_GIFTS = false
 	getgenv().GHOLD_BUNDLES = false
@@ -131,8 +132,6 @@ local function LoadFarmConfig()
 
 	ApplyCommonMailConfig()
 end
-
-task.wait(10)
 
 LoadFarmConfig()
 
