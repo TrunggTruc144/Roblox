@@ -102,7 +102,7 @@ local function LoadFarmConfig()
 	getgenv().GAUTO_UPGRADE_PETS = true
 	getgenv().GHATCH_BETTER_PETS = true
 	getgenv().GCOMBINE_KEYS = true
-	getgenv().GMASTERY_TO_MAX = "Economy"
+	getgenv().GMASTERY_TO_MAX = "Eggs"
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GDAYCARE = true
 
