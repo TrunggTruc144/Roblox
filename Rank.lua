@@ -1,3 +1,8 @@
+if getgenv().SCRIPT_MODE ~= "FARM" then
+	warn("[Farm] Blocked because SCRIPT_MODE is not FARM")
+	return
+end
+
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()

@@ -1,3 +1,8 @@
+if getgenv().SCRIPT_MODE ~= "RNG" then
+	warn("[RNG_Event] Blocked because SCRIPT_MODE is not RNG")
+	return
+end
+
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()

@@ -1,37 +1,57 @@
-local Save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+task.wait(10)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+
+local Save = require(ReplicatedStorage.Library.Client.Save)
 
 local function getData()
 	return Save.Get() or {}
 end
 
-local rank = getData().Rank or 0
-local rebirth = getData().Rebirths or 0
+local function getRankRebirth()
+	local data = getData()
+	return data.Rank or 0, data.Rebirths or 0
+end
+
+local rank, rebirth = getRankRebirth()
+
+warn("[Selector] PlaceId:", game.PlaceId, "| Rank:", rank, "| Rebirths:", rebirth)
 
 if rank < 11 or rebirth < 9 then
-	print("Rank mode")
+	warn("[Selector] Farm mode")
+
+	getgenv().SCRIPT_MODE = "FARM"
 
 	task.spawn(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/Rank.lua"))()
 	end)
 
 	while true do
-		local data = getData()
-		rank = data.Rank or 0
-		rebirth = data.Rebirths or 0
+		task.wait(60)
 
-		print("[CHECK]", rank, rebirth)
+		rank, rebirth = getRankRebirth()
+
+		warn("[CHECK]", "Rank:", rank, "| Rebirths:", rebirth, "| PlaceId:", game.PlaceId)
 
 		if rank >= 11 and rebirth >= 9 then
+			warn("[Selector] Rank/Rebirth done, kicking to rejoin RNGEvent")
+			task.wait(3)
 			LocalPlayer:Kick("Rank/Rebirth target reached - rejoin for RNGEvent")
 			break
 		end
-
-		task.wait(60)
 	end
 else
-	print("RNG mode")
+	warn("[Selector] RNG Event mode")
 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/RNG_Event.lua"))()
+	getgenv().SCRIPT_MODE = "RNG"
+
+	task.spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/RNG_Event.lua"))()
+	end)
 end
