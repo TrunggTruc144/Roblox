@@ -1,8 +1,3 @@
-if getgenv().SCRIPT_MODE ~= "RNG" then
-	warn("[RNG_Event] Blocked because SCRIPT_MODE is not RNG")
-	return
-end
-
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()
@@ -122,8 +117,6 @@ if game.PlaceId ~= 8737899170 then
 	task.wait(20)
 	return
 end
-
-task.wait(10)
 
 LoadEventRNGConfig()
 
