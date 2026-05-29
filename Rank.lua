@@ -1,8 +1,3 @@
-if getgenv().SCRIPT_MODE ~= "FARM" then
-	warn("[Farm] Blocked because SCRIPT_MODE is not FARM")
-	return
-end
-
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()
@@ -76,17 +71,18 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadFarmConfig()
-	getgenv().GDO_TIME_TRIAL = true
-	getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
-	getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
-	getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
-	getgenv().GTIME_TRIAL_ENCHANTS =
-		{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
+	-- getgenv().GDO_TIME_TRIAL = true
+	-- getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	-- getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	-- getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	-- getgenv().GTIME_TRIAL_ENCHANTS =
+	-- 	{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
 	getgenv().GLOOTBOXES = { "Locked Hype Egg 3", "Titanic Fantasy Present" }
 
 	-- getgenv().GRANK_FIRST = true
-	getgenv().GZONE_TO = 999
+	getgenv().GZONE_TO = 99
+	getgenv().GREBIRTH_TO = 4
 	--getgenv().GFOCUS_RANK_TO = 11
 
 	getgenv().GPROGRESS_MODE = "Hybrid"
