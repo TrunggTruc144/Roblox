@@ -106,6 +106,15 @@ local function LoadEventRNGConfig()
 	getgenv().GRNG_USE_MEGA1 = false
 	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 10
 
+	getgenv().GCONSUME_CHARMS = true
+	getgenv().GCOMBINE_KEYS = true
+	getgenv().GUSE_SPINNY_WHEEL = true
+	getgenv().GHOLD_GIFTS = false
+	getgenv().GHOLD_BUNDLES = false
+	getgenv().GCONSUME_SEED_BAGS = true
+	getgenv().GOPEN_ITEMS_IN_BULK = true
+	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
+
 	ApplyCommonMailConfig()
 end
 
