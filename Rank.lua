@@ -133,8 +133,6 @@ local function LoadFarmConfig()
 	ApplyCommonMailConfig()
 end
 
-task.wait(10)
-
 LoadFarmConfig()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
