@@ -101,7 +101,7 @@ local function LoadEventRNGConfig()
 		"Lucky Dice III V2",
 		"Mega Lucky Dice V2",
 		"Mega Lucky Dice II V2",
-		--"Fire Dice V2",
+		"Fire Dice V2",
 	}
 	getgenv().GRNG_USE_MEGA1 = false
 	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 5
@@ -128,5 +128,7 @@ if game.PlaceId ~= 8737899170 then
 end
 
 LoadEventRNGConfig()
+
+task.wait(10)
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
