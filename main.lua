@@ -19,7 +19,7 @@ local function ApplyCommonMailConfig()
 		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
 		["All Sea Dragons"] = { Class = "Card", Id = "Huge Sea Dragon Card", MinAmount = 1, AllVariants = true },
 		["Ghostly Pack"] = { Class = "Lootbox", Id = "Ghostly Pack", MinAmount = 1 },
-		["Time Trial Gift 2"] = { Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 18 },
+		["Time Trial Gift 2"] = { Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 1 },
 
 		["Hype Egg 3"] = { Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1 },
 		["Hype Egg 2"] = { Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1 },
@@ -33,13 +33,6 @@ local function ApplyCommonMailConfig()
 		["Secret 6"] = { Class = "Pet", Id = "Heart", MinAmount = 1 },
 		["Secret 7"] = { Class = "Pet", Id = "Lucky Clover", MinAmount = 1 },
 		["Secret 8"] = { Class = "Pet", Id = "Mystery", MinAmount = 1 },
-
-		-- ["Normal Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 5 },
-		-- ["Shiny Normal Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 1, IsShiny = true },
-		-- ["Golden Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 1, IsGold = true },
-		-- ["Shiny Golden Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 1, IsGold = true, IsShiny = true },
-		-- ["RB Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 1, IsRainbow = true },
-		-- ["Shiny RB Surge Wolf"] = { Class = "Pet", Id = "Surge Wolf", MinAmount = 1, IsRainbow = true, IsShiny = true },
 
 		["Exclusive Egg 57"] = { Class = "Egg", Id = "Exclusive Egg 57", MinAmount = 1 },
 		["Exclusive Egg 58"] = { Class = "Egg", Id = "Exclusive Egg 58", MinAmount = 1 },
@@ -108,10 +101,9 @@ local function LoadEventRNGConfig()
 		"Lucky Dice III V2",
 		"Mega Lucky Dice V2",
 		"Mega Lucky Dice II V2",
-		"Fire Dice V2",
 	}
 	getgenv().GRNG_USE_MEGA1 = false
-	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 5
+	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 2
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
