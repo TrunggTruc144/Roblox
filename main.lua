@@ -71,7 +71,14 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadEventRNGConfig()
-	getgenv().GLOOTBOXES = { "Locked Hype Egg 3" }
+	getgenv().GLOOTBOXES = {
+		"Locked Hype Egg 3",
+		"Small Fantasy Present",
+		"Medium Fantasy Present",
+		"Large Fantasy Present",
+		"X-Large Fantasy Present",
+		"Titanic Fantasy Present",
+	}
 
 	getgenv().GZONE_TO = 1
 	getgenv().GGFX_MODE = 1
@@ -102,8 +109,8 @@ local function LoadEventRNGConfig()
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
 	getgenv().GUSE_SPINNY_WHEEL = true
-	getgenv().GHOLD_GIFTS = true
-	getgenv().GHOLD_BUNDLES = true
+	getgenv().GHOLD_GIFTS = false
+	getgenv().GHOLD_BUNDLES = false
 	getgenv().GCONSUME_SEED_BAGS = true
 	getgenv().GOPEN_ITEMS_IN_BULK = true
 	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
