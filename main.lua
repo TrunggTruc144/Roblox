@@ -84,6 +84,7 @@ local function LoadEventRNGConfig()
 	getgenv().GGFX_MODE = 1
 	getgenv().GENCHANTS = {
 		"Huge Hunter",
+		"Shiny Hunter",
 		"Criticals",
 		"Strong Pets",
 		"Tap Power",
