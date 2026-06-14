@@ -97,12 +97,12 @@ local function LoadEventRNGConfig()
 	getgenv().GDO_BACKROOMS = true
 	getgenv().GBACKROOMS_OPEN_CHESTS = true
 
-	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
-	getgenv().GTRADE_ITEMS = {
-		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
-		["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
-		["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
-	}
+	-- getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
+	-- getgenv().GTRADE_ITEMS = {
+	-- 	["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
+	-- 	["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
+	-- 	["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
+	-- }
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
