@@ -85,16 +85,18 @@ local function LoadEventRNGConfig()
 	getgenv().GENCHANTS = {
 		"Huge Hunter",
 		"Shiny Hunter",
-		"Criticals",
-		"Strong Pets",
-		"Tap Power",
-		"Criticals",
-		"Criticals",
-		"Strong Pets",
-		"Criticals",
+		"Lucky Eggs",
+		"Lucky Eggs",
+		"Lucky Eggs",
+		"Lucky Eggs",
+		"Lucky Eggs",
+		"Lucky Eggs",
+		"Lucky Eggs",
 	}
 
 	getgenv().GDO_BACKROOMS = true
+	getgenv().GBACKROOMS_OPEN_CHESTS = true
+	getgenv().GBACKROOMS_MIN_MULTIPLIER = 75
 
 	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 	getgenv().GTRADE_ITEMS = {
