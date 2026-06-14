@@ -95,7 +95,7 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
-	getgenv().GBACKROOMS_OPEN_CHESTS = true
+	getgenv().GBACKROOMS_OPEN_CHESTS = false
 	getgenv().GBACKROOMS_MIN_MULTIPLIER = 75
 	getgenv().GALLOW_HOPPING = true
 
