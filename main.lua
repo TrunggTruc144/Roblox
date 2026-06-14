@@ -99,11 +99,6 @@ local function LoadEventRNGConfig()
 	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 	getgenv().GTRADE_ITEMS = {
 		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
-		["Crystal Key"] = { Class = "Misc", Id = "Crystal Key", MinAmount = "1" },
-		["Secret Key"] = { Class = "Misc", Id = "Secret Key", MinAmount = "1" },
-		["Fantasy Key"] = { Class = "Misc", Id = "Fantasy Key", MinAmount = "1" },
-		["Void Key"] = { Class = "Misc", Id = "Void Key", MinAmount = "1" },
-		["Tech Key"] = { Class = "Misc", Id = "Tech Key", MinAmount = "1" },
 		["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
 		["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
 	}
