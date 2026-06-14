@@ -71,18 +71,19 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadFarmConfig()
-	getgenv().GDO_TIME_TRIAL = true
-	getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
-	getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
-	getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
-	getgenv().GTIME_TRIAL_ENCHANTS =
-		{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
+	-- getgenv().GDO_TIME_TRIAL = true
+	-- getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	-- getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	-- getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	-- getgenv().GTIME_TRIAL_ENCHANTS =
+	-- 	{ "Explosive", "Criticals", "Criticals", "Tap Power", "Tap Power", "Strong Pets", "Criticals" }
 
-	getgenv().GLOOTBOXES = { "Locked Hype Egg 3", "Titanic Fantasy Present" }
+	-- getgenv().GLOOTBOXES = { "Locked Hype Egg 3", "Titanic Fantasy Present" }
 
 	-- getgenv().GRANK_FIRST = true
-	getgenv().GZONE_TO = 999
-	-- getgenv().GREBIRTH_TO = 4
+	getgenv().GZONE_TO = 99
+	getgenv().GREBIRTH_TO = 4
+	getgenv().GRANK_TO = 5
 	--getgenv().GFOCUS_RANK_TO = 11
 
 	getgenv().GPROGRESS_MODE = "Hybrid"
@@ -128,7 +129,7 @@ local function LoadFarmConfig()
 	getgenv().GPOTIONS_MAX_TIER = 99
 
 	getgenv().GKICK_ON_STAFF = false
-	getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
+	-- getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present"
 
 	ApplyCommonMailConfig()
 end
