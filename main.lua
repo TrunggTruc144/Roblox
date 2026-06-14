@@ -83,11 +83,12 @@ local function LoadEventRNGConfig()
 	getgenv().GZONE_TO = 1
 	getgenv().GGFX_MODE = 1
 	getgenv().GENCHANTS = {
-		"Criticals",
+		"Huge Hunter",
 		"Criticals",
 		"Strong Pets",
 		"Tap Power",
-		"Strong Pets",
+		"Criticals",
+		"Criticals",
 		"Strong Pets",
 		"Criticals",
 	}
