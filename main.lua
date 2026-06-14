@@ -97,6 +97,7 @@ local function LoadEventRNGConfig()
 	getgenv().GDO_BACKROOMS = true
 	getgenv().GBACKROOMS_OPEN_CHESTS = true
 	getgenv().GBACKROOMS_MIN_MULTIPLIER = 75
+	getgenv().GALLOW_HOPPING = true
 
 	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 	getgenv().GTRADE_ITEMS = {
