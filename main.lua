@@ -79,37 +79,31 @@ local function LoadEventRNGConfig()
 		"Criticals",
 		"Criticals",
 		"Strong Pets",
-		"Strong Pets",
+		"Tap Power",
 		"Strong Pets",
 		"Strong Pets",
 		"Criticals",
 	}
 
-	getgenv().GDO_RNG_INSTANCE = true
-	getgenv().GEVENT_UPGRADES = {
-		{ Id = "RNGEggLuck", MaxTier = 20 },
-		{ Id = "RNGHatchSpeed", MaxTier = 15 },
-		{ Id = "RNGBonusLuck", MaxTier = 10 },
-		{ Id = "RNGHugeLuck", MaxTier = 15 },
-		{ Id = "RNGExtraEgg", MaxTier = 8 },
+	getgenv().GDO_BACKROOMS = true
+
+	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
+	getgenv().GTRADE_ITEMS = {
+		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
+		["Crystal Key"] = { Class = "Misc", Id = "Crystal Key", MinAmount = "1" },
+		["Secret Key"] = { Class = "Misc", Id = "Secret Key", MinAmount = "1" },
+		["Fantasy Key"] = { Class = "Misc", Id = "Fantasy Key", MinAmount = "1" },
+		["Void Key"] = { Class = "Misc", Id = "Void Key", MinAmount = "1" },
+		["Tech Key"] = { Class = "Misc", Id = "Tech Key", MinAmount = "1" },
+		["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
+		["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
 	}
-	getgenv().GUSE_BOOSTS = true
-	getgenv().GRNG_SELL_PETS = true
-	getgenv().GRNG_CRAFT_DICE = true
-	getgenv().GRNG_CRAFT_DICE_SELECT = {
-		"Lucky Dice II V2",
-		"Lucky Dice III V2",
-		"Mega Lucky Dice V2",
-		"Mega Lucky Dice II V2",
-	}
-	getgenv().GRNG_USE_MEGA1 = false
-	getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 2
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
 	getgenv().GUSE_SPINNY_WHEEL = true
-	getgenv().GHOLD_GIFTS = false
-	getgenv().GHOLD_BUNDLES = false
+	getgenv().GHOLD_GIFTS = true
+	getgenv().GHOLD_BUNDLES = true
 	getgenv().GCONSUME_SEED_BAGS = true
 	getgenv().GOPEN_ITEMS_IN_BULK = true
 	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
