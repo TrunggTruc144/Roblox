@@ -82,7 +82,7 @@ local function LoadEventRNGConfig()
 
 	getgenv().GZONE_TO = 1
 	getgenv().GGFX_MODE = 1
-	getgenv().GENCHANTS = {
+	getgenv().GHATCH_ENCHANTS = {
 		"Huge Hunter",
 		"Shiny Hunter",
 		"Lucky Eggs",
@@ -92,6 +92,17 @@ local function LoadEventRNGConfig()
 		"Lucky Eggs",
 		"Lucky Eggs",
 		"Lucky Eggs",
+	}
+	getgenv().GENCHANTS = {
+		"Criticals",
+		"Strong Pets",
+		"Tap Power",
+		"Criticals",
+		"Strong Pets",
+		"Tap Power",
+		"Criticals",
+		"Strong Pets",
+		"Tap Power",
 	}
 
 	getgenv().GDO_BACKROOMS = true
