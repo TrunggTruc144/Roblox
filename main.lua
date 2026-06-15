@@ -95,9 +95,12 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
-	-- getgenv().GBACKROOMS_OPEN_CHESTS = false
-	-- getgenv().GALLOW_HOPPING = false
-	-- getgenv().GBACKROOMS_MIN_MULTIPLIER = 75
+	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
+	getgenv().GEVENT_UPGRADES = {
+		{ Id = "BackroomsBossDamage", MaxTier = 20 }, --max is 20
+		{ Id = "BackroomsTokenFind", MaxTier = 15 }, --max is 15
+		{ Id = "BackroomsExtraLootRoll", MaxTier = 10 }, --max is 10
+	}
 
 	-- getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 	-- getgenv().GTRADE_ITEMS = {
