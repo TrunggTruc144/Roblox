@@ -106,6 +106,7 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
+	getgenv().GBACKROOMS_OPEN_CHESTS = true
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "BackroomsBossDamage", MaxTier = 20 }, --max is 20
