@@ -1,7 +1,7 @@
 -- Cấu hình FPS
 local FPS_CONFIG = {
 	DEFAULT = {
-		fps = 3,
+		fps = 2,
 		allowed = { 1, 2, 3 },
 	},
 
