@@ -1,3 +1,4 @@
+setfpscap(2)
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
 pcall(function()
@@ -123,7 +124,6 @@ local function LoadEventRNGConfig()
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
-	getgenv().GUSE_SPINNY_WHEEL = true
 	getgenv().GHOLD_GIFTS = false
 	getgenv().GHOLD_BUNDLES = false
 	getgenv().GCONSUME_SEED_BAGS = true
