@@ -114,11 +114,11 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsExtraLootRoll", MaxTier = 10 }, --max is 10
 	}
 
-	getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
-	getgenv().GTRADE_ITEMS = {
-		["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
-		["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
-	}
+	-- getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
+	-- getgenv().GTRADE_ITEMS = {
+	-- 	["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
+	-- 	["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
+	-- }
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
