@@ -71,6 +71,13 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadEventRNGConfig()
+	getgenv().GRANK_FIRST = true
+	getgenv().GHOP_ON_STAFF = true
+	getgenv().GRANK_TO = 5
+	getgenv().GZONE_TO = 99
+	getgenv().GREBIRTH_TO = 4
+	getgenv().GGFX_MODE = 1
+
 	getgenv().GLOOTBOXES = {
 		"Locked Hype Egg 3",
 		"Small Fantasy Present",
@@ -80,8 +87,6 @@ local function LoadEventRNGConfig()
 		"Titanic Fantasy Present",
 	}
 
-	getgenv().GZONE_TO = 1
-	getgenv().GGFX_MODE = 1
 	getgenv().GHATCH_ENCHANTS = {
 		"Huge Hunter",
 		"Shiny Hunter",
