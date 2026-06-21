@@ -113,10 +113,10 @@ local function LoadEventRNGConfig()
 	getgenv().GBACKROOMS_OPEN_CHESTS = true
 	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = true
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
-	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
+	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 	getgenv().GALLOW_HOPPING = true
-	getgenv().GBACKROOMS_MIN_MULTIPLIER = 25
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "68m"
+	getgenv().GBACKROOMS_MIN_MULTIPLIER = 75
+	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "38m"
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "BackroomsBossDamage", MaxTier = 25 }, --max is 25
 		{ Id = "BackroomsTokenFind", MaxTier = 20 }, --max is 20
