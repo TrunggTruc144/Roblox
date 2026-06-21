@@ -110,8 +110,8 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
-	getgenv().GBACKROOMS_OPEN_CHESTS = false
-	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
+	getgenv().GBACKROOMS_OPEN_CHESTS = true
+	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = true
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
 	-- getgenv().GALLOW_HOPPING = true
