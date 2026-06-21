@@ -72,7 +72,7 @@ end
 
 local function LoadEventRNGConfig()
 	getgenv().GRANK_FIRST = true
-	getgenv().GRANK_TO = 5
+	getgenv().GRANK_TO = 8
 	getgenv().GZONE_TO = 99
 	getgenv().GREBIRTH_TO = 4
 	getgenv().GGFX_MODE = 1
@@ -110,13 +110,13 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
-	getgenv().GBACKROOMS_OPEN_CHESTS = true
-	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = true
+	getgenv().GBACKROOMS_OPEN_CHESTS = false
+	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
-	-- getgenv().GALLOW_HOPPING = true
-	-- getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "38m"
+	getgenv().GALLOW_HOPPING = true
+	getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
+	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "138m"
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "BackroomsBossDamage", MaxTier = 25 }, --max is 25
 		{ Id = "BackroomsTokenFind", MaxTier = 20 }, --max is 20
