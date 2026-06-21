@@ -71,6 +71,7 @@ local function ApplyCommonMailConfig()
 end
 
 local function LoadEventRNGConfig()
+	getgenv().GPROGRESS_MODE = "Hybrid"
 	getgenv().GRANK_FIRST = true
 	getgenv().GRANK_TO = 8
 	getgenv().GZONE_TO = 99
@@ -116,7 +117,7 @@ local function LoadEventRNGConfig()
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 	-- getgenv().GALLOW_HOPPING = true
 	-- getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "138m"
+	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "700m"
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "BackroomsBossDamage", MaxTier = 25 }, --max is 25
 		{ Id = "BackroomsTokenFind", MaxTier = 20 }, --max is 20
