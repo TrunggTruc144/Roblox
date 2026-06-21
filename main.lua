@@ -72,7 +72,6 @@ end
 
 local function LoadEventRNGConfig()
 	getgenv().GRANK_FIRST = true
-	getgenv().GHOP_ON_STAFF = true
 	getgenv().GRANK_TO = 5
 	getgenv().GZONE_TO = 99
 	getgenv().GREBIRTH_TO = 4
