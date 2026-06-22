@@ -119,10 +119,10 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsBossDamage", MaxTier = 1 }, --max is 25
 		{ Id = "BackroomsTokenFind", MaxTier = 1 }, --max is 20
 		{ Id = "BackroomsExtraLootRoll", MaxTier = 1 }, --max is 20
-		{ Id = "BackroomsCoinMultiplier", MaxTier = 10 }, --max is 20
-		{ Id = "BackroomsEggLuck", MaxTier = 20 }, --max is 20
+		{ Id = "BackroomsCoinMultiplier", MaxTier = 5 }, --max is 20
+		{ Id = "BackroomsEggLuck", MaxTier = 10 }, --max is 20
 		{ Id = "BackroomsKeyFind", MaxTier = 15 }, --max is 15,
-		{ Id = "BackroomsDeepBossDamage", MaxTier = 5 }, --max is 25,
+		{ Id = "BackroomsDeepBossDamage", MaxTier = 1 }, --max is 25,
 	}
 
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
