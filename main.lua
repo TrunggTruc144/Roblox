@@ -111,7 +111,7 @@ local function LoadEventRNGConfig()
 
 	getgenv().GDO_BACKROOMS = true
 	getgenv().GALLOW_HOPPING = false
-	--getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
+	getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "1000m"
 	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = true
@@ -119,10 +119,10 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsBossDamage", MaxTier = 1 }, --max is 25
 		{ Id = "BackroomsTokenFind", MaxTier = 1 }, --max is 20
 		{ Id = "BackroomsExtraLootRoll", MaxTier = 1 }, --max is 20
-		{ Id = "BackroomsCoinMultiplier", MaxTier = 20 }, --max is 20
+		{ Id = "BackroomsCoinMultiplier", MaxTier = 10 }, --max is 20
 		{ Id = "BackroomsEggLuck", MaxTier = 20 }, --max is 20
 		{ Id = "BackroomsKeyFind", MaxTier = 15 }, --max is 15,
-		{ Id = "BackroomsDeepBossDamage", MaxTier = 1 }, --max is 25,
+		{ Id = "BackroomsDeepBossDamage", MaxTier = 5 }, --max is 25,
 	}
 
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
