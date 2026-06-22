@@ -1,9 +1,5 @@
 local PRIVATE_CONFIG = getgenv().PRIVATE_CONFIG or {}
 
--- pcall(function()
--- 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TrunggTruc144/Roblox/refs/heads/main/LockFPS.lua"))()
--- end)
-
 local function ApplyCommonMailConfig()
 	getgenv().GWEBHOOK_USERID = PRIVATE_CONFIG.WEBHOOK_USERID or ""
 	getgenv().GWEBHOOK_LINK = PRIVATE_CONFIG.WEBHOOK_LINK or ""
@@ -40,6 +36,8 @@ local function ApplyCommonMailConfig()
 		["Exclusive Egg 60"] = { Class = "Egg", Id = "Exclusive Egg 60", MinAmount = 1 },
 		["Exclusive Egg 61"] = { Class = "Egg", Id = "Exclusive Egg 61", MinAmount = 1 },
 		["Exclusive Egg 62"] = { Class = "Egg", Id = "Exclusive Egg 62", MinAmount = 1 },
+		["Exclusive Egg 63"] = { Class = "Egg", Id = "Exclusive Egg 63", MinAmount = 1 },
+		["Exclusive Egg 64"] = { Class = "Egg", Id = "Exclusive Egg 64", MinAmount = 1 },
 
 		["Mega Potion Chest"] = { Class = "Lootbox", Id = "Mega Potion Chest", MinAmount = 1 },
 		["Mega Enchant Chest"] = { Class = "Lootbox", Id = "Mega Enchant Chest", MinAmount = 1 },
@@ -73,10 +71,11 @@ end
 local function LoadEventRNGConfig()
 	getgenv().GPROGRESS_MODE = "Hybrid"
 	getgenv().GRANK_FIRST = true
-	getgenv().GRANK_TO = 8
-	getgenv().GZONE_TO = 99
-	getgenv().GREBIRTH_TO = 4
+	getgenv().GRANK_TO = 11
+	getgenv().GZONE_TO = 999
+	getgenv().GREBIRTH_TO = 9
 	getgenv().GGFX_MODE = 1
+	getgenv().GMASTERY_TO_MAX = "Eggs"
 
 	getgenv().GLOOTBOXES = {
 		"Locked Hype Egg 3",
@@ -111,21 +110,24 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GDO_BACKROOMS = true
+	getgenv().GALLOW_HOPPING = false
+	getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
+	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
+	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "700m"
+	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = true
+	getgenv().GEVENT_UPGRADES = {
+		{ Id = "BackroomsBossDamage", MaxTier = 1 }, --max is 25
+		{ Id = "BackroomsTokenFind", MaxTier = 1 }, --max is 20
+		{ Id = "BackroomsExtraLootRoll", MaxTier = 1 }, --max is 20
+		{ Id = "BackroomsCoinMultiplier", MaxTier = 20 }, --max is 20
+		{ Id = "BackroomsEggLuck", MaxTier = 20 }, --max is 20
+		{ Id = "BackroomsKeyFind", MaxTier = 15 }, --max is 15,
+		{ Id = "BackroomsDeepBossDamage", MaxTier = 5 }, --max is 25,
+	}
+
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
 	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
-	getgenv().GBACKROOMS_DO_BOSS_ROOM = true
-	-- getgenv().GALLOW_HOPPING = true
-	-- getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "700m"
-	getgenv().GEVENT_UPGRADES = {
-		{ Id = "BackroomsBossDamage", MaxTier = 25 }, --max is 25
-		{ Id = "BackroomsTokenFind", MaxTier = 20 }, --max is 20
-		{ Id = "BackroomsExtraLootRoll", MaxTier = 20 }, --max is 20
-		{ Id = "BackroomsCoinMultiplier", MaxTier = 20 }, --max is 20
-		{ Id = "BackroomsEggLuck", MaxTier = 20 }, --max is 20
-		{ Id = "BackroomsKeyFind", MaxTier = 15 }, --max is 15
-	}
 
 	-- getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
 	-- getgenv().GTRADE_ITEMS = {
@@ -144,14 +146,14 @@ local function LoadEventRNGConfig()
 	ApplyCommonMailConfig()
 end
 
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
+-- if game.PlaceId ~= 8737899170 then
+-- 	pcall(function()
+-- 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+-- 	end)
 
-	task.wait(20)
-	return
-end
+-- 	task.wait(20)
+-- 	return
+-- end
 
 LoadEventRNGConfig()
 
