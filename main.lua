@@ -54,8 +54,8 @@ local function ApplyCommonMailConfig()
 		["MVP Key Upper Half"] = { Class = "Misc", Id = "MVP Key Upper Half", MinAmount = 50 },
 		["MVP Key Lower Half"] = { Class = "Misc", Id = "MVP Key Lower Half", MinAmount = 500 },
 
-		["Royalty"] = { Class = "Charm", Id = "Royalty", MinAmount = 1 },
-		["Overload"] = { Class = "Charm", Id = "Overload", MinAmount = 1 },
+		["Royalty"] = { Class = "Charm", Id = "Royalty", MinAmount = 2 },
+		["Overload"] = { Class = "Charm", Id = "Overload", MinAmount = 2 },
 
 		["Secret Key"] = { Class = "Misc", Id = "Secret Key", MinAmount = 200 },
 		["Fantasy Key"] = { Class = "Misc", Id = "Fantasy Key", MinAmount = 100 },
