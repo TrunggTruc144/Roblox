@@ -70,10 +70,10 @@ end
 
 local function LoadEventRNGConfig()
 	getgenv().GPROGRESS_MODE = "Hybrid"
-	-- getgenv().GRANK_FIRST = true
-	-- getgenv().GRANK_TO = 11
+	getgenv().GRANK_FIRST = true
+	getgenv().GRANK_TO = 11
 	getgenv().GZONE_TO = 999
-	-- getgenv().GREBIRTH_TO = 9
+	getgenv().GREBIRTH_TO = 9
 	getgenv().GGFX_MODE = 1
 	getgenv().GMASTERY_TO_MAX = "Eggs"
 
