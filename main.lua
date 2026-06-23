@@ -125,13 +125,6 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsDeepBossDamage", MaxTier = 1 }, --max is 25,
 	}
 
-	getgenv().GINVENTORY_COUNTS = {
-		["BackroomDollars"] = { Class = "Currency", Id = "DaydreamCoins" },
-		["Deep Backrooms Crayon Key"] = { Class = "Misc", Id = "Deep Backrooms Crayon Key" },
-		["Chest Hunt Token"] = { Class = "Misc", Id = "Chest Hunt Token" },
-		["Deep Chest Token"] = { Class = "Misc", Id = "Deep Chest Token" },
-	}
-
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
 	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
