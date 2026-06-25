@@ -117,7 +117,7 @@ local function LoadEventRNGConfig()
 	getgenv().GALLOW_HOPPING = true
 	getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
 	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "2000m"
+	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "1500m"
 
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "BackroomsCoinMultiplier", MaxTier = 7 }, --max is 20,
