@@ -120,9 +120,9 @@ local function LoadEventRNGConfig()
 	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "2000m"
 
 	getgenv().GEVENT_UPGRADES = {
-		{ Id = "BackroomsCoinMultiplier", MaxTier = 10 }, --max is 20,
-		{ Id = "BackroomsEggLuck", MaxTier = 10 }, --max is 20,
-		{ Id = "BackroomsKeyFind", MaxTier = 10 }, --max is 15,
+		{ Id = "BackroomsCoinMultiplier", MaxTier = 9 }, --max is 20,
+		{ Id = "BackroomsEggLuck", MaxTier = 9 }, --max is 20,
+		{ Id = "BackroomsKeyFind", MaxTier = 8 }, --max is 15,
 		{ Id = "BackroomsDeepBossDamage", MaxTier = 3 }, --max is 25,
 	}
 
