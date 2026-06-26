@@ -74,7 +74,7 @@ local function LoadEventRNGConfig()
 	getgenv().GPROGRESS_MODE = "Hybrid"
 	getgenv().GRANK_FIRST = true
 	getgenv().GRANK_TO = 8
-	getgenv().GZONE_TO = 1
+	getgenv().GZONE_TO = 240
 	-- getgenv().GREBIRTH_TO = 9
 	getgenv().GGFX_MODE = 1
 	getgenv().GMASTERY_TO_MAX = "Eggs"
@@ -126,8 +126,7 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsDeepBossDamage", MaxTier = 3 }, --max is 25,
 	}
 
-	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = true
-	getgenv().GBACKROOMS_DO_BACKROOMS_DELETE = true
+	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = false
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
 	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
@@ -149,14 +148,14 @@ local function LoadEventRNGConfig()
 	ApplyCommonMailConfig()
 end
 
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
+-- if game.PlaceId ~= 8737899170 then
+-- 	pcall(function()
+-- 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+-- 	end)
 
-	task.wait(20)
-	return
-end
+-- 	task.wait(20)
+-- 	return
+-- end
 
 LoadEventRNGConfig()
 
