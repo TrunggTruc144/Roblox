@@ -65,8 +65,6 @@ local function ApplyCommonMailConfig()
 		["Fantasy Spinny Wheel Ticket"] = { Class = "Misc", Id = "Fantasy Spinny Wheel Ticket", MinAmount = 50 },
 		["Magic Shard"] = { Class = "Misc", Id = "Magic Shard", MinAmount = 200 },
 		["Bucket O' Magic"] = { Class = "Misc", Id = "Bucket O' Magic", MinAmount = 200 },
-
-		["Backrooms Teleport Booster"] = { Class = "Consumable", Id = "Backrooms Teleport Booster", MinAmount = 1 },
 	}
 end
 
