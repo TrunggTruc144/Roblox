@@ -98,6 +98,7 @@ local function LoadEventRNGConfig()
 	}
 
 	getgenv().GENCHANTS = {
+		"Huge Hunter",
 		"Lucky Eggs",
 		"Lucky Eggs",
 		"Lucky Eggs",
