@@ -80,6 +80,7 @@ local function LoadEventRNGConfig()
 	getgenv().GKICK_ON_STAFF = true
 
 	getgenv().GDO_SOCCER_EVENT = true
+	getgenv().GSOCCER_EVENT_ALWAYS_SHOOT_MAX_POWER = true
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "SoccerBetterYeetEgg", MaxTier = 5 }, --max is 5
 		{ Id = "SoccerTrickshotThrowChance", MaxTier = 5 }, --max is 5
@@ -122,15 +123,6 @@ local function LoadEventRNGConfig()
 	getgenv().GPOTIONS_MAX_TIER = 99
 
 	ApplyCommonMailConfig()
-end
-
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
-
-	task.wait(20)
-	return
 end
 
 LoadEventRNGConfig()
