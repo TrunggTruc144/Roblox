@@ -15,7 +15,7 @@ local function ApplyCommonMailConfig()
 		["All Huges"] = { Class = "Pet", Id = "All Huges", MinAmount = 1 },
 		["All Sea Dragons"] = { Class = "Card", Id = "Huge Sea Dragon Card", MinAmount = 1, AllVariants = true },
 		["Ghostly Pack"] = { Class = "Lootbox", Id = "Ghostly Pack", MinAmount = 1 },
-		["Time Trial Gift 2"] = { Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 1 },
+		["Time Trial Gift 2"] = { Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 18 },
 
 		["Hype Egg 3"] = { Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1 },
 		["Hype Egg 2"] = { Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1 },
@@ -71,13 +71,16 @@ end
 local function LoadEventRNGConfig()
 	getgenv().GPROGRESS_MODE = "Hybrid"
 	-- getgenv().GRANK_FIRST = true
-	-- getgenv().GRANK_TO = 8
-	getgenv().GZONE_TO = 1
-	-- getgenv().GREBIRTH_TO = 9
+	getgenv().GZONE_TO = 999
 	getgenv().GGFX_MODE = 1
 	getgenv().GMASTERY_TO_MAX = "Eggs"
 
-	getgenv().GHOP_ON_STAFF = true
+	getgenv().GAUTO_UPGRADE_PETS = true
+	getgenv().GMAX_EGG_SLOTS = 99
+	getgenv().GMAX_EQUIP_SLOTS = 99
+	getgenv().GMAX_ZONE_UPGRADE_COST = 999999999
+
+	getgenv().GKICK_ON_STAFF = true
 
 	getgenv().GLOOTBOXES = {
 		"Locked Hype Egg 3",
@@ -88,52 +91,31 @@ local function LoadEventRNGConfig()
 		"Titanic Fantasy Present",
 	}
 
-	getgenv().GHATCH_ENCHANTS = {
-		"Huge Hunter",
-		"Shiny Hunter",
-		"Lucky Eggs",
-		"Lucky Eggs",
-		"Lucky Eggs",
-		"Lucky Eggs",
-		"Lucky Eggs",
-		"Lucky Eggs",
-		"Lucky Eggs",
-	}
 	getgenv().GENCHANTS = {
+		"Huge Hunter",
 		"Criticals",
-		"Strong Pets",
 		"Tap Power",
+		"Lucky Eggs",
+		"Tap Power",
+		"Treasure Hunter",
+		"Diamonds",
 		"Criticals",
-		"Strong Pets",
-		"Tap Power",
-		"Criticals",
-		"Strong Pets",
-		"Tap Power",
 	}
 
-	getgenv().GDO_BACKROOMS = true
-	getgenv().GALLOW_HOPPING = true
-	getgenv().GBACKROOMS_MIN_MULTIPLIER = 100
-	getgenv().GBACKROOMS_DO_BOSS_ROOM = false
-	getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "1500m"
-
-	getgenv().GEVENT_UPGRADES = {
-		{ Id = "BackroomsCoinMultiplier", MaxTier = 7 }, --max is 20,
-		{ Id = "BackroomsEggLuck", MaxTier = 7 }, --max is 20,
-		{ Id = "BackroomsKeyFind", MaxTier = 7 }, --max is 15,
-		{ Id = "BackroomsDeepBossDamage", MaxTier = 3 }, --max is 25,
+	getgenv().GDO_TIME_TRIAL = true
+	getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1
+	getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3
+	getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1
+	getgenv().GTIME_TRIAL_ENCHANTS = {
+		"Criticals",
+		"Tap Power",
+		"Tap Power",
+		"Strong Pets",
+		"Walkspeed",
+		"Criticals",
+		"Criticals",
+		"Criticals",
 	}
-
-	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = true
-	getgenv().GBACKROOMS_OPEN_CHESTS = false
-	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
-	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
-
-	-- getgenv().GAUTO_TRADE_WHITE_LIST = PRIVATE_CONFIG.MAIL_RECEIVERS or {}
-	-- getgenv().GTRADE_ITEMS = {
-	-- 	["All Titanics"] = { Class = "Pet", Id = "All Titanics", MinAmount = "1" },
-	-- 	["All Gargantuans"] = { Class = "Pet", Id = "All Gargantuans", MinAmount = "1" },
-	-- }
 
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
@@ -141,19 +123,25 @@ local function LoadEventRNGConfig()
 	getgenv().GHOLD_BUNDLES = false
 	getgenv().GCONSUME_SEED_BAGS = true
 	getgenv().GOPEN_ITEMS_IN_BULK = true
-	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Lightning Storm", "Ground Pound" }
+	getgenv().GUSE_ULTIMATES = { "UFO", "Tsunami", "Tornado", "Pet Surge", "Chest Spell", "Ground Pound" }
+	getgenv().GFRUITS = { "Watermelon", "Candycane", "Apple", "Rainbow", "Pineapple", "Orange", "Banana" }
+	getgenv().GPOTIONS =
+		{ "Coins", "Lucky", "The Cocktail", "Huge", "Treasure Hunter", "Walkspeed", "Diamonds", "Damage" }
+	getgenv().GUSE_FLAGS = { "Fortune Flag", "Diamonds Flag", "Coins Flag" }
+	getgenv().GPOTIONS_MAX_TIER = 99
+	getgenv().GIGNORE_ALL_INSTANCES = true
 
 	ApplyCommonMailConfig()
 end
 
-if game.PlaceId ~= 8737899170 then
-	pcall(function()
-		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
-	end)
+-- if game.PlaceId ~= 8737899170 then
+-- 	pcall(function()
+-- 		game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("World1Teleport"):InvokeServer()
+-- 	end)
 
-	task.wait(20)
-	return
-end
+-- 	task.wait(20)
+-- 	return
+-- end
 
 LoadEventRNGConfig()
 
