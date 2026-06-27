@@ -124,7 +124,7 @@ local function LoadEventRNGConfig()
 		{ Id = "BackroomsDeepBossDamage", MaxTier = 3 }, --max is 25,
 	}
 
-	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = false
+	getgenv().GBACKROOMS_TOKEN_CHEST_FARM = true
 	getgenv().GBACKROOMS_OPEN_CHESTS = false
 	getgenv().GBACKROOMS_OPEN_CHESTS_ONLY_DEEP_ROOMS = false
 	getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
