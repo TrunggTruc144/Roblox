@@ -118,6 +118,7 @@ local function LoadEventRNGConfig()
 	getgenv().GFRUITS = { "Watermelon", "Candycane", "Apple", "Rainbow", "Pineapple", "Orange", "Banana" }
 	getgenv().GPOTIONS =
 		{ "Coins", "Lucky", "The Cocktail", "Huge", "Treasure Hunter", "Walkspeed", "Diamonds", "Damage" }
+	getgenv().GPOTIONS_MAX_TIER = 99
 
 	ApplyCommonMailConfig()
 end
