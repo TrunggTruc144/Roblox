@@ -81,7 +81,7 @@ local function LoadEventRNGConfig()
 
 	getgenv().GDO_SOCCER_EVENT = true
 	getgenv().GSOCCER_EVENT_ALWAYS_SHOOT_MAX_POWER = true
-	getgenv().GSOCCER_EVENT_SHOOT_FAST = false
+	getgenv().GSOCCER_EVENT_SHOOT_FAST = true
 	getgenv().GEVENT_UPGRADES = {
 		{ Id = "SoccerBetterYeetEgg", MaxTier = 5 }, --max is 5
 		{ Id = "SoccerTrickshotThrowChance", MaxTier = 5 }, --max is 5
