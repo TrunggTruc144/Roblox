@@ -66,14 +66,14 @@ local function ApplyCommonMailConfig()
 		["Magic Shard"] = { Class = "Misc", Id = "Magic Shard", MinAmount = 200 },
 		["Bucket O' Magic"] = { Class = "Misc", Id = "Bucket O' Magic", MinAmount = 200 },
 
-		["Soccer Gift"] = { Class = "Lootbox", Id = "Soccer Gift", Amount = 100 },
+		["Soccer Gift"] = { Class = "Lootbox", Id = "Soccer Gift", Amount = 200 },
 	}
 end
 
 local function LoadEventRNGConfig()
 	getgenv().GPROGRESS_MODE = "Hybrid"
 	getgenv().GRANK_FIRST = true
-	getgenv().GRANK_TO = 8
+	getgenv().GRANK_TO = 6
 	getgenv().GZONE_TO = 99
 	-- getgenv().GREBIRTH_TO = 9
 	getgenv().GGFX_MODE = 1
