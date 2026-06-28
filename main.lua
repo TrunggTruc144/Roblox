@@ -111,6 +111,7 @@ local function LoadEventRNGConfig()
 		"Lucky Eggs",
 	}
 
+	getgenv().GUSE_BOOSTS = true
 	getgenv().GCONSUME_CHARMS = true
 	getgenv().GCOMBINE_KEYS = true
 	getgenv().GHOLD_GIFTS = false
